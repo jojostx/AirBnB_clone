@@ -1,6 +1,6 @@
 # AirBnB_clone
 ## The goal of the project is to deploy on a server a simple copy of the AirBnB website.
-Only a subset of the features are implemented, necessary to cover all fundamental concepts of the higher level programming track.
+OnlY a subset of the features are implemented, necessary to cover all fundamental concepts of the higher level programming track.
 
 ## Project Brief
 The project contains a complete web application composed by:
