@@ -1,9 +1,11 @@
+#!/usr/bin/python3
 """
 Base model for all other models to
 inherit from
 """
 import uuid
 from datetime import datetime
+from models import storage
 
 
 class BaseModel:
@@ -16,6 +18,7 @@ class BaseModel:
             self.id = f'{uuid.uuid4()}'
             self.created_at = datetime.now()
             self.updated_at = self.created_at
+            storage.new(self)
         else:
             f = "%Y-%m-%dT%H:%M:%S.%f"
             for key, value in kwargs.items():
@@ -33,6 +36,7 @@ class BaseModel:
         """updates the updated_at timestamp
         """
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """creates a new dictionary, adding a key and returning
