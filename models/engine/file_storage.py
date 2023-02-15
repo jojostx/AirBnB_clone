@@ -40,8 +40,16 @@ class FileStorage:
         no exception should be raised)
         """
         from models.base_model import BaseModel
-
-        model_dict = {'BaseModel': BaseModel}
+        from models.user import User
+        from models.place import Place
+        from models.city import City
+        from models.amenity import Amenity
+        from models.state import State
+        from models.review import Review
+        
+        model_dict = {'BaseModel': BaseModel, 'User': User, 'Place': Place,
+               'City': City, 'Amenity': Amenity, 'State': State,
+               'Review': Review}
 
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r') as f:
